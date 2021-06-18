@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "gregorycoleman\\Soup\\": "src/"
+            "gregorycoleman\\Soup\\": "packages/gregorycoleman/soup/src/"
         }
     },
     "require": {
