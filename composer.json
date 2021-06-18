@@ -10,9 +10,13 @@
             "name": "Gregory Coleman",
             "email": "packagist@raydo.com",
             "homepage": "https://github.com/gregorycoleman/Soup"
-
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "gregorycoleman\\Soup\\": "src/"
+        }
+    },
     "require": {
         "php": "^7.2|^8.0"
     },
