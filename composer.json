@@ -1,0 +1,21 @@
+{
+    "name": "gregorycoleman/soup",
+    "description": "First laravel package",
+    "license": "GNU AFFERO GENERAL PUBLIC LICENSE",
+    "authors": [
+        {
+            "name": "Gregory Coleman",
+            "email": "packagist@raydo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable" : true,
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "gregorycoleman\\Soup\\SoupServiceProvider"
+            ]
+        }
+    }
+} 
