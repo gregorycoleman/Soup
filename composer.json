@@ -1,7 +1,7 @@
 {
     "name": "gregorycoleman/soup",
     "description": "First laravel package",
-    "license": "GNU AFFERO GENERAL PUBLIC LICENSE",
+    "license": "AGPL-1.0-only",
     "authors": [
         {
             "name": "Gregory Coleman",
