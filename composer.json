@@ -19,12 +19,5 @@
     "require-dev": {
         "phpunit/phpunit": "^7.0|^8.0|^9.0"
     },
-    "minimum-stability": "dev",
-    "extra": {
-        "laravel": {
-            "providers": [
-                "gregorycoleman\\Soup\\src\\SoupServiceProvider"
-            ]
-        }
-    }
+    "minimum-stability": "dev"
 }
