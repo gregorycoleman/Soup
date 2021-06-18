@@ -1,7 +1,6 @@
 {
     "name": "gregorycoleman/soup",
     "description": "Soup ORM laravel package",
-    "type": "library",
     "license": "AGPL-1.0-only",
     "authors": [
         {
@@ -10,12 +9,13 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable" : true,
     "require": {},
     "extra": {
         "laravel": {
             "providers": [
-                "gregorycoleman\\soup\\SoupServiceProvider"
+                "gregorycoleman\\Soup\\SoupServiceProvider"
             ]
         }
     }
-}
+} 
