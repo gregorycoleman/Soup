@@ -13,11 +13,6 @@
 
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "gregorycoleman\\Soup\\": "packages/gregorycoleman/soup/src/"
-        }
-    },
     "require": {
         "php": "^7.2|^8.0"
     },
@@ -28,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "gregorycoleman\\Soup\\SoupServiceProvider"
+                "gregorycoleman\\Soup\\src\\SoupServiceProvider"
             ]
         }
     }
