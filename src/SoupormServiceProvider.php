@@ -1,10 +1,10 @@
 <?php
 
-namespace Gregorycoleman\Souporm;
+namespace Gregorycoleman\Souporm ;
 
-use Gregorycoleman\Souporm\Commands\SoupormCommand;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Gregorycoleman\Souporm\Commands\SoupormCommand ;
+use Spatie\LaravelPackageTools\Package ;
+use Spatie\LaravelPackageTools\PackageServiceProvider ;
 
 class SoupormServiceProvider extends PackageServiceProvider
 {
@@ -20,6 +20,6 @@ class SoupormServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_souporm_table')
-            ->hasCommand(SoupormCommand::class);
+            ->hasCommand(SoupormCommand::class) ;
     }
 }

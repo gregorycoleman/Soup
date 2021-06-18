@@ -1,17 +1,17 @@
 <?php
 
-namespace Gregorycoleman\Souporm\Commands;
+namespace Gregorycoleman\Souporm\Commands ;
 
-use Illuminate\Console\Command;
+use Illuminate\Console\Command ;
 
 class SoupormCommand extends Command
 {
-    public $signature = 'souporm';
+    public $signature = 'souporm' ;
 
-    public $description = 'My command';
+    public $description = 'My command' ;
 
     public function handle()
     {
-        $this->comment('All done');
+        $this->comment('All done') ;
     }
 }

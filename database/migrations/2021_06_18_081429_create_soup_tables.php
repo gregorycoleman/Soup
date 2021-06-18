@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration ;
+use Illuminate\Database\Schema\Blueprint ;
+use Illuminate\Support\Facades\Schema ;
 
 class CreateSoupTables extends Migration
 {
@@ -14,15 +14,15 @@ class CreateSoupTables extends Migration
     public function up()
     {
         Schema::create('soup_objects', function (Blueprint $table) {
-            $table->id();
-            $table->string('uuid')->unique();
-            $table->timestamps();
-        });
+            $table->id() ;
+            $table->string('uuid')->unique() ;
+            $table->timestamps() ;
+        }) ;
         Schema::create('soup_data', function (Blueprint $table) {
-            $table->id();
-            $table->string('uuid')->unique();
-            $table->timestamps();
-        }); 
+            $table->id() ;
+            $table->string('uuid')->unique() ;
+            $table->timestamps() ;
+        }) ; 
     }
 
     /**
@@ -32,7 +32,7 @@ class CreateSoupTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('soup_objects');
-        Schema::dropIfExists('soup_data');
+        Schema::dropIfExists('soup_objects') ;
+        Schema::dropIfExists('soup_data') ;
     }
 }

@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Models;
+namespace App\Models ;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\HasFactory ;
+use Illuminate\Database\Eloquent\Model ;
+use Illuminate\Support\Str ;
 
 class SoupData extends Model
 {
-    protected $table = 'soup_data';
+    protected $table = 'soup_data' ;
 
-    use HasFactory;
+    use HasFactory ;
 
     public function __construct(array $attributes = array())
     {
-        parent::__construct($attributes);
+        parent::__construct($attributes) ;
 
-        $this->uuid = Str::uuid(); ;
+        $this->uuid = Str::uuid() ; ;
     }
 
 }

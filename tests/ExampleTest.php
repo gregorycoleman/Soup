@@ -1,12 +1,12 @@
 <?php
 
-namespace Gregorycoleman\Souporm\Tests;
+namespace Gregorycoleman\Souporm\Tests ;
 
 class ExampleTest extends TestCase
 {
     /** @test */
     public function true_is_true()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(true) ;
     }
 }

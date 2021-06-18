@@ -1,8 +1,8 @@
 <?php
 
-namespace Gregorycoleman\Souporm;
+namespace Gregorycoleman\Souporm ;
 
-use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Facades\Facade ;
 
 /**
  * @see \Gregorycoleman\Souporm\Souporm
@@ -11,6 +11,6 @@ class SoupormFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'souporm';
+        return 'souporm' ;
     }
 }
