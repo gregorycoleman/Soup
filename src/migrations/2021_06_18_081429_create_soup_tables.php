@@ -28,8 +28,15 @@ class CreateSoupTables extends Migration
             $table->bigIncrements('prev_record') ;
             $table->string('computed_hash' ) ;
             $table->integer('algo_version_number')->default(1) ;
-            $table->string('data')->nullable() ;
+
+            $table->string('parent_object_uuid')->nullable() ;
+            
             $table->smallInteger('is_deleted')->default(0) ;
+
+            $table->string('key')->nullable() ;
+            $table->string('value')->nullable() ;
+            $table->string('type')->nullable() ;
+
             $table->timestamps() ;
         }) ; 
 

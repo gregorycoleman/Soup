@@ -13,11 +13,13 @@ class CreateSoupTables extends Migration
      */
     public function up()
     {
+        /*
         Schema::create('soup_objects', function (Blueprint $table) {
             $table->id() ;
             $table->string('uuid')->unique() ;
             $table->timestamps() ;
         }) ;
+        */
         Schema::create('soup_data', function (Blueprint $table) {
             $table->id() ;
             $table->string('uuid')->unique() ;
@@ -32,7 +34,7 @@ class CreateSoupTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('soup_objects') ;
+        //Schema::dropIfExists('soup_objects') ;
         Schema::dropIfExists('soup_data') ;
     }
 }

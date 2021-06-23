@@ -1,9 +1,9 @@
 <?php
 
 /** 
-* namespace Gregorycoleman\Souporm ;
+* namespace Gregorycoleman\Souporm;
 * 
-* $t = new Souporm() ;
+* $t = new Souporm();
 *
 *
 * each record has a pointer to previous record
@@ -40,15 +40,16 @@
 
 
 
-namespace Gregorycoleman\Souporm ;
+namespace Gregorycoleman\Souporm;
 
-use Illuminate\Support\Str ;
-use App\Models\SoupData ;
+use Illuminate\Support\Str;
+use App\Models\SoupData;
 
 class Souporm
 {
+
     public static function hi(){
-        echo "Laravel Soup Package" ;
+        echo "Laravel Soup Package";
     }
 
     /**
@@ -56,45 +57,79 @@ class Souporm
      * the object. Sets things like creation time, etc.
      * @return uuid
      */
-    public function create() {
-        $modelUuid = Str::uuid() ; 
-        return($modelUuid) ;
+    private function create() {
+        $cv = new SoupData;
+        $cv->uuid = Str::uuid(); 
+        $cv->object_id = $cv->uuid; // this is the default to create an object
+                            // for most part, this will be overwritten
+
+        // get the last record.
+        $lastRecord = SoupData::orderBy('id', 'desc')->first();
+        $cv->prev_record = $lastRecord->id;
+        $cv->algo_version_number = $lastRecord->algo_version_number;
+
+        $prevhash = $lastRecord->computed_hash;
+
+        switch ($cv->algo_version_number) {
+            case 1: 
+                if ($newhash = hash('tiger192,3', $prevhash . $cv->uuid ) == false ){
+                    // should return an error
+                }
+                break;
+            default:
+                // throw error
+                break;
+        }
+
+        $cd->computed_hash = $newhash ;
+        return($cv );
     }
 
-    /**
-     * Write all object records to db
-     */
-    public function save() {
 
+
+    /**
+     * Sets a key value in the opject
+     */
+    private function setType($parentObjectUuid , $key, $value, $type ) {
+
+        $cv = $this->create();
+
+        if ( $parentObjectUuid != NULL)
+        {
+            // get the parent object
+            $objectrecord = SoupData::where('uuid', $objectUuid )->first();
+            $cv->parent_object_uuid = $objectrecord->uuid;
+        } else {
+            // an object, so doesnt have a parent object id
+            $cv->parent_object_uuid = Str::uuid();
+        }
+
+        $cv->type  = $type;
+        $cv->key   = $key;
+        $cv->value = $value;
+        $cv->save();
+        return ($cv->uuid);
     }
 
-    /**
-     * Debugging function
-     */
-    public function print() {
+    /****** PUBLIC FUNCTIONS ***********/
 
+    /**
+     * Sets a key value in the opject, this is a user 
+     * defined variable
+     */
+    public function storeKeyValue($parentObjectUuid,$key, $value) {
+        return ($this->setType($parentObjectUuid,$key, $value, "userdata") );
+    }
+
+    public function createObject() {
+        return ($this->setType(NULL,'', 'Create Object', "object") );
     }
 
     /**
      * Sets a key value in the opject, this is a user 
      * defined variable
      */
-    public function set($key, $value) {
-        $this->setType($key, $value, "user") ;
-    }
-
-    /**
-     * Sets a key value in the opject
-     */
-    private function setType($key, $value, $type) {
-        // get the last record.
-        $lastRecord = SoupData::orderBy('id', 'desc')->first();
-
-        $cv = new SoupData;
-        $cv->code = $faker->word;
-        $cv->name = $faker->company;
-        $cv->guid = Guid::create();
-        $cv->save() ;
-
+    public function newObject($parentObjectUuid,$key, $value) {
+        return ($this->setType($parentObjectUuid,$key, $value, "userdata") );
     }
 }
