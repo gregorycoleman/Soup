@@ -23,6 +23,11 @@
 * | User Data | user
 * +---------------------------------+
 * 
+* @author     Gregory Coleman <apackagist@raydo.com>
+* @copyright  2021 Gregory Coleman
+* @license    https://github.com/gregorycoleman/Soup/blob/HEAD/LICENSE.md  AFFERO GENERAL PUBLIC LICENSE Version 1
+* @version    Release: @package_version@
+* @link       https://packagist.org/packages/gregorycoleman/soup
 */
 
 namespace Gregorycoleman\Souporm ;
@@ -41,8 +46,8 @@ class Souporm
      * @return uuid
      */
     public function create() {
-        $model_uuid = Str::uuid() ; 
-        return($model_uuid) ;
+        $modelUuid = Str::uuid() ; 
+        return($modelUuid) ;
     }
 
     /**
