@@ -30,9 +30,20 @@
 * @link       https://packagist.org/packages/gregorycoleman/soup
 */
 
+/**
+ * Block Chain Algo
+ * type 0
+ *   take previous hash
+ *   add it to current uuid
+ *   save as computer hash
+ */
+
+
+
 namespace Gregorycoleman\Souporm ;
 
 use Illuminate\Support\Str ;
+use App\Models\SoupData ;
 
 class Souporm
 {
@@ -76,6 +87,14 @@ class Souporm
      * Sets a key value in the opject
      */
     private function setType($key, $value, $type) {
+        // get the last record.
+        $lastRecord = SoupData::orderBy('id', 'desc')->first();
+
+        $cv = new SoupData;
+        $cv->code = $faker->word;
+        $cv->name = $faker->company;
+        $cv->guid = Guid::create();
+        $cv->save() ;
 
     }
 }
