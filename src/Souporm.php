@@ -64,13 +64,13 @@ class Souporm
      * defined variable
      */
     public function set($key, $value) {
-        $this->set_type($key, $value, "user") ;
+        $this->setType($key, $value, "user") ;
     }
 
     /**
      * Sets a key value in the opject
      */
-    private function set_type($key, $value, $type) {
+    private function setType($key, $value, $type) {
 
     }
 }
