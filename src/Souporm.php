@@ -1,7 +1,7 @@
 <?php
 
 /** 
-* namespace Gregorycoleman\Souporm;
+* namespace Gregorycoleman\Souporm ;
 * 
 * $t = new Souporm() ;
 *
@@ -25,7 +25,9 @@
 * 
 */
 
-namespace Gregorycoleman\Souporm;
+namespace Gregorycoleman\Souporm ;
+
+use Illuminate\Support\Str ;
 
 class Souporm
 {
@@ -36,9 +38,11 @@ class Souporm
     /**
      * Creates a record. Returns the uuid, but does not save 
      * the object. Sets things like creation time, etc.
+     * @return uuid
      */
     public function create() {
-
+        $model_uuid = Str::uuid() ; 
+        return($model_uuid) ;
     }
 
     /**
